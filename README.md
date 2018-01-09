@@ -9,5 +9,5 @@ assumed to be installed prior execution of the following instructions._
 
 1. Checkout
 2. run `npm install` command
-3. run `npm start` command
+3. run `npm run start` command
 4. open http://localhost:8080 in your browser
