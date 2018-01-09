@@ -55,7 +55,7 @@ export default (state = [], action) => {
             if (sheet[action.row].length < action.col) {
                 sheet[action.row] = [
                     ...action.row,
-                    ...Array(action.col - sheet[action.row].length + 1).fill({ value: '', prior: null })
+                    ...new Array(action.col - sheet[action.row].length + 1).fill().map( () => ({ value: '', prior: null }) )
                 ];
             }
             sheet[action.row][action.col] = { value: action.value, prior: null };
@@ -75,7 +75,7 @@ function normalizeSheetDimensions(sheet) {
     } ).length;
     let r = sheet.map( (row) => {
         return (row.length < len)
-            ? row.concat(Array(len - row.length).fill({ value: '', prior: null }))
+            ? row.concat( new Array(len - row.length).fill().map( () => ({ value: '', prior: null }) ) )
             : row;
     } );
     return r;

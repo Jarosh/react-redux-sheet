@@ -101,8 +101,10 @@ class AppIndex extends React.Component {
                 if (col.cell) {
                     pos = this.findCellPosition(tmp, col.cell);
                     min = (ind === 0) ? ( (pos ? pos.x : 0) - 1 ) : min;
+                    //console.log(`@ ${ind} / ${min} / ${JSON.stringify(pos)} / ${JSON.stringify(col.cell)}`);
                 }
                 if (pos) {
+                    //console.log(`${JSON.stringify(pos)} / ${col.data}`);
                     if (col.cell && col.cell.value !== col.data) {
                         this.props.dispatch(doUpdateSheetCell(pos.y, pos.x, col.data));
                     } else if (!col.cell) {
