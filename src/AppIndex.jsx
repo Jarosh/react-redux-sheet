@@ -19,10 +19,6 @@ class AppIndex extends React.Component {
     constructor (props) {
         super(props);
 
-        this.state = {
-            gridWidth: 2
-        };
-        
         Modal.defaultStyles.content.margin = '50px';
         
         this.onOpenSheet = this.onOpenSheet.bind(this);
